@@ -1,0 +1,72 @@
+RESUMEN DE RESPUESTAS
+=======================
+
+1. 1. Identificar entidades
+cliente, pedidos, productos, empleado
+
+2. 2. Atributos de cada entidad
+cliente: id_cliente, nombre (simple), dirección (compuesta), teléfono (simple), email (multivaluado)
+producto: código (simple), nombre (simple), precio (simple), stock (simple)
+pedido:id_pedido, fecha (simple), estado (simple),id_cliente(simple)
+empleado: id_pedido(simple), id_empleado(simplle), nombre
+
+3. 3. Claves candidatas y clave primaria
+clientes: id_cliente (PK) la elegi como primare key porque es un atributo unico y no se puede repetir
+producto: codigo (PK) la elegi porque cada producto tiene su propio codigo
+pedidos; id_pedido (PK) la elegi porque es uinica en la tabla
+empleado: id_empleado (PK) la elegi porque es unica
+
+4. 4. Relaciones entre entidades
+1)cliente realiza Pedido: clientes realizan pedidos que tienen un cliente asociado
+2)pedido contiene Producto: pedidos contienen varios productos y se registra cuantos producto tiene cada uno
+3)empleado atiende Pedido: empleados atienden los pedidos porque un empleado puede atender varios pedidos pero cada pedido es atendido por un solo empleado
+
+5. 5. Cardinalidad de cada relación
+cliente-Pedido: 1:N un cliente realiza varios pedidos
+pedido-Producto: N:M un pedido contiene varios productos y un producto puede estar en varios pedidos
+empleado-Pedido: 1:N un empleado puede atender varios pedidos, pero cada pedido es atendido por un solo empleado
+
+6. 6. Atributos de las relaciones
+Si, el atributo es Cantidad. Pertenece a la relacion entre Pedido y Producto porque representa cuantas unidades de ese producto especifico se compraron en ese pedido
+
+7. 7. Atributos multivaluados
+(no respondido)
+
+8. 8. Tablas del diccionario de datos (I)
+(no respondido)
+
+9. 9. Tablas del diccionario de datos (II)
+(no respondido)
+
+10. 10. Listado final de tablas
+Tabla Cliente
+Atributos: ID_Cliente, Nombre, Direccion, Telefono
+PK: ID_Cliente
+FK: Ninguna
+
+Tabla Cliente_Email
+Atributos: ID_Cliente, Email
+PK: (ID_Cliente, Email)
+FK: ID_Cliente (apunta a Cliente.ID_Cliente)
+
+Tabla Producto
+Atributos: Codigo, Nombre, Precio, Stock
+PK: Codigo
+FK: Ninguna
+
+Tabla Empleado
+Atributos: ID_Empleado, Nombre
+PK: ID_Empleado
+FK: Ninguna
+
+Tabla Pedido
+Atributos: Numero_Pedido, Fecha, Estado, ID_Cliente, ID_Empleado
+PK: Numero_Pedido
+FK: ID_Cliente (apunta a Cliente.ID_Cliente), ID_Empleado (apunta a Empleado.ID_Empleado)
+
+Tabla Pedido_Producto
+Atributos: Numero_Pedido, Codigo_Producto, Cantidad
+PK: (Numero_Pedido, Codigo_Producto)
+FK: Numero_Pedido (apunta a Pedido.Numero_Pedido), Codigo_Producto (apunta a Producto.Codigo)
+=======================
+📌 Recuerda: Dibuja el diagrama E-R en papel o con herramienta y súbelo junto con este resumen.
