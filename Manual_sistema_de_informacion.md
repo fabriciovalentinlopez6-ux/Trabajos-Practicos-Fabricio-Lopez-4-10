@@ -1,6 +1,7 @@
 # Manual
 
 Matias campos, Fabricio lopez
+link del video: https://youtu.be/uN19_H5n-Lo?si=QH4HUKnK5iCSZpuz
 
 Los programas que necesitamos son:
 
